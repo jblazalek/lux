@@ -26,7 +26,7 @@ public class CompanyController {
         return repository.findById(id).orElseThrow(() -> new CompanyNotFoundException(id));
     }
 
-    @PostMapping
+    @PostMapping("/new")
     public Company createCompany(@RequestBody Company company) {
         return repository.save(company);
     }

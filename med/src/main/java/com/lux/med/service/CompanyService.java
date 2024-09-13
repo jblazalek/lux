@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CompanyService {
-
-    private CompanyRepository companyRepository;
+    /* Right now it's just to show structure, but in case of more complicated code,
+       here would be all the logic which is now in controller class
+     */
 }

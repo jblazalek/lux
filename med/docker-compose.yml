@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  med:
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: med
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/luxmed
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=hass123
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8080:8080"
+
+  db:
+    image: postgres
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=hass123
+      - POSTGRES_DB=luxmed
